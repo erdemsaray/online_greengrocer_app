@@ -7,3 +7,8 @@ class ColorItems {
   static Color colorTextGrey = const Color.fromRGBO(203, 203, 212, 1);
   static Color colorIconYellow = const Color.fromRGBO(210, 174, 130, 1);
 }
+
+class SizeItems {
+  static double appBarIconSize = 33;
+  static double navigationBarIconSize = 32;
+}
