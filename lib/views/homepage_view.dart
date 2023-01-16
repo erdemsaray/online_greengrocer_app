@@ -21,6 +21,9 @@ class HomePageView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const OfferWidget(),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Row(
@@ -56,7 +59,7 @@ class HomePageView extends StatelessWidget {
                       itemCount: 5,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
                           child: Container(
                             decoration: const BoxDecoration(
                                 color: Colors.black,
@@ -64,6 +67,51 @@ class HomePageView extends StatelessWidget {
                                     BorderRadius.vertical(top: Radius.circular(70), bottom: Radius.circular(20))),
                             height: heightSize * 0.2,
                             width: 150,
+                            child: Column(
+                              children: [
+                                Container(
+                                    height: heightSize * 0.13,
+                                    width: 200,
+                                    decoration: BoxDecoration(
+                                        color: ColorItems.colorFruitBackground,
+                                        borderRadius: const BorderRadius.vertical(
+                                          top: Radius.circular(70),
+                                        )),
+                                    child: Image.asset("assets/strawberry.png")),
+                                SizedBox(
+                                  height: heightSize * 0.15,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(18),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "FRUIT",
+                                              style: TextStyle(color: ColorItems.colorFruitYellowText),
+                                            ),
+                                            Expanded(
+                                              child: SizedBox(
+                                                width: 100,
+                                              ),
+                                            ),
+                                            Icon(
+                                              Icons.star,
+                                              color: ColorItems.colorIconYellow,
+                                            ),
+                                            Text("5.0", style: TextStyle(color: ColorItems.colorFruitYellowText))
+                                          ],
+                                        ),
+                                        Text("PINEAPPLE", style: TextStyle(color: ColorItems.colorFruitYellowText)),
+                                        Text("16 Euro/per kg", style: TextStyle(color: ColorItems.colorIconYellow))
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         );
                       },
