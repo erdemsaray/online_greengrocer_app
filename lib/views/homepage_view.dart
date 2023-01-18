@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../constants/project_variables.dart';
+import '../widgets/fruit_widget.dart';
 
 class HomePageView extends StatelessWidget {
   const HomePageView({super.key});
@@ -21,7 +22,7 @@ class HomePageView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const OfferWidget(),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Padding(
@@ -58,61 +59,14 @@ class HomePageView extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 14),
-                          child: Container(
-                            decoration: const BoxDecoration(
-                                color: Colors.black,
-                                borderRadius:
-                                    BorderRadius.vertical(top: Radius.circular(70), bottom: Radius.circular(20))),
-                            height: heightSize * 0.2,
-                            width: 150,
-                            child: Column(
-                              children: [
-                                Container(
-                                    height: heightSize * 0.13,
-                                    width: 200,
-                                    decoration: BoxDecoration(
-                                        color: ColorItems.colorFruitBackground,
-                                        borderRadius: const BorderRadius.vertical(
-                                          top: Radius.circular(70),
-                                        )),
-                                    child: Image.asset("assets/strawberry.png")),
-                                SizedBox(
-                                  height: heightSize * 0.15,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(18),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              "FRUIT",
-                                              style: TextStyle(color: ColorItems.colorFruitYellowText),
-                                            ),
-                                            Expanded(
-                                              child: SizedBox(
-                                                width: 100,
-                                              ),
-                                            ),
-                                            Icon(
-                                              Icons.star,
-                                              color: ColorItems.colorIconYellow,
-                                            ),
-                                            Text("5.0", style: TextStyle(color: ColorItems.colorFruitYellowText))
-                                          ],
-                                        ),
-                                        Text("PINEAPPLE", style: TextStyle(color: ColorItems.colorFruitYellowText)),
-                                        Text("16 Euro/per kg", style: TextStyle(color: ColorItems.colorIconYellow))
-                                      ],
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
+                        return const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                          child: FruitWidget(
+                              name: "Kiwi",
+                              point: "4.1",
+                              price: "7",
+                              imageLink:
+                                  "https://static.vecteezy.com/system/resources/previews/008/530/509/original/kiwi-fruit-cutout-file-png.png"),
                         );
                       },
                     ),

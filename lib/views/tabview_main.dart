@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants/project_variables.dart';
 import 'favoritepage_view.dart';
 import 'homepage_view.dart';
-import 'listpage_view.dart';
+import 'offerspage_view.dart';
 import 'searchpage_view.dart';
 
 class TabViewPage extends StatefulWidget {
@@ -108,7 +108,7 @@ class _TabViewPageState extends State<TabViewPage> with TickerProviderStateMixin
         ),
         body: TabBarView(
           controller: _tabController,
-          children: const [HomePageView(), SearchPageView(), FavoritePageView(), ListPageView()],
+          children: const [HomePageView(), SearchPageView(), FavoritePageView(), OffersPageView()],
         ),
       ),
     );
